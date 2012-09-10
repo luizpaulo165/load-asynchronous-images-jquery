@@ -4,6 +4,9 @@ Load Asynchronous Images - Lib jQuery v.1.0
 Script para ser usado em páginas web, onde irá melhorar o carregamento das páginas através do carregamento assincrono das imagens.
 O mesmo encontra-se na sua versão inicial, por isso alguns erros podem existir. Qualquer dúvida é só entrar em contato pelo email: luizpaulo165@gmail.com ou pela minha página no facebook: http://www.facebook.com/luizpaulo165.
 
+Script to be used in web pages, which will improve the page loading through asynchronous loading of images.
+The same is the original version, so some errors may exist. Any questions just contact us by email: luizpaulo165@gmail.com or my facebook page: http://www.facebook.com/luizpaulo165.
+
 Como usar
 ===============================
 
