@@ -11,7 +11,7 @@ Como usar
 1 - Para usar o script, basta acrescenta-lo a sua página:
 	- <script type="text/javascript" src="scripts/asynchronous.js"></script>;
 
-2- No script asynchronous.js, vá na variável "$content" e mude o seu valor(caso queira algum valor específico).
+2- No script asynchronous.js, vá na variável "$content" e mude o seu valor(caso queira algum valor específico):
 	- Linha 13: var $content = $("img");
 
 Obs: Nunca esquecer de adicionar o Jquery a página("http://jquery.com/"), caso contrário o script não erá funcionar.
@@ -26,9 +26,9 @@ how to use
 ===============================
 
 1 - To use the script, simply add it to your page:
-- <script Type="text/javascript" src="scripts/asynchronous.js"> </ script>;
+	- <script type="text/javascript" src="scripts/asynchronous.js"></script>;
 
-2 - In asynchronous.js script, look at the variable "$ content" and change its value (if you want some specific value).
-- Line 13: var $ content = $ ("img");
+2 - In asynchronous.js script, look at the variable "$ content" and change its value (if you want some specific value):
+	- Linha 13: var $content = $("img");
 
 Note: Never forget to add the Jquery page ("http://jquery.com/"), otherwise the script was not working.
