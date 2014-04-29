@@ -23,8 +23,8 @@ $.fn.loadimgLp = function(options){
     styles: "normal",  // normal, scroll
     urlLoadingImage: "images/loading.gif",
     classLoadingImage: "loading",
-    delay:   1000,
-    fadeInTime: 1000
+    delayTime:   150,
+    fadeInTime: 600
   }
   options = $.extend(defaults, options);
  /*=====================================================
@@ -38,23 +38,33 @@ function motion(effects){
           normal
         ======================================================*/
         //vars
-        var $content = $("img");
+        var $content = $this;
         var $contentLength = $content.length;
 
-        $("img").hide();
+        $content.hide();
 
         i = 0;
 
         $content.each(function(e){
-          var $self = $(this);
+          var $self = $(this),
+                $selfSrc = $self.data('src');
 
-          $self.after("<img src='"+ options.urlLoadingImage +"' class='"+ options.classLoadingImage  +"' />");
+            var jqxhr = $.get( $selfSrc, function() {
+              $self.after("<img src='"+ options.urlLoadingImage +"' class='"+ options.classLoadingImage  +"' />");
+            })
+              .done(function() {
+                $self.attr({
+                  src: $selfSrc
+                });
+                $self.delay(e*options.delayTime).fadeIn(options.fadeInTime).queue(function(){
+                  $self.next("." + options.classLoadingImage).remove();
+                });
+              })
+              .fail(function() {
+                $self.next(options.classLoadingImage).remove();
+                $self.parent().text('Sem imagem!')
+              })
 
-          $self.delay(e*options.delay).fadeIn(options.fadeInTime).queue(function(){
-            i++;
-
-            $self.next(".loading").remove();
-          });
         });
 	}
 }
