@@ -21,7 +21,7 @@ $.fn.loadimgLp = function(options){
 ======================================================*/
   var defaults = {
     styles: "scroll",  // normal, scroll
-    urlLoadingImage: "images/loading.gif",
+    urlLoadingImage: "http://localhost/projects/prototipos/load_imgs/images/loading.gif",
     classLoadingImage: "loading",
     delayTime:   0,
     fadeInTime: 600,
@@ -87,17 +87,7 @@ function motion(effects){
                var jqxhr = $.get( $selfSrc, function() {
                })
                  .done(function() {
-                    if($(window).scrollTop() == 0){
-                      $self.attr({
-                        src: $selfSrc
-                      });
-                      $self.delay(e*options.delayTime).animate({
-                        opacity:"1"
-                      },options.fadeInTime).queue(function(){
-                        $self.next("." + options.classLoadingImage).remove();
-                      });
-                    }
-                    
+                  
                     $(window).scroll(function(){
 
                       var $selfTop = $self.offset().top;
