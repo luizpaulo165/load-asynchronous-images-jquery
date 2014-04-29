@@ -87,10 +87,21 @@ function motion(effects){
                var jqxhr = $.get( $selfSrc, function() {
                })
                  .done(function() {
+                    if($(window).scrollTop() == 0){
+                      $self.attr({
+                        src: $selfSrc
+                      });
+                      $self.delay(e*options.delayTime).animate({
+                        opacity:"1"
+                      },options.fadeInTime).queue(function(){
+                        $self.next("." + options.classLoadingImage).remove();
+                      });
+                    }
+                    
                     $(window).scroll(function(){
 
                       var $selfTop = $self.offset().top;
-                      console.log($selfTop)
+
 
                        if($(window).scrollTop() > $selfTop ){
                          $self.attr({
